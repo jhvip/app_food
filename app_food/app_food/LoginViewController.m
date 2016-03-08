@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
+#import "UserInfo.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *pwTextField;
 @property (weak, nonatomic) IBOutlet UILabel *userError;
 @property (weak, nonatomic) IBOutlet UILabel *pwError;
+@property (weak, nonatomic) IBOutlet UILabel *errorInfo;
 
 @end
 
@@ -23,6 +25,7 @@
 - (IBAction)loginAction:(id)sender {
     self.userError.hidden=YES;
     self.pwError.hidden=YES;
+    self.errorInfo.hidden=YES;
     NSString *userName=self.userNameTextField.text;
     NSString *passWord=self.pwTextField.text;
     if ([userName isEqualToString:@""]) {
@@ -40,10 +43,22 @@
     AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
     [manage GET:url parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([[responseObject objectForKey:@"error"] isEqualToString:@"1000"]) {
+            UserInfo *user=[[UserInfo alloc]init];
+            user.userName=[responseObject objectForKey:@"userName"];
+            user.token=[responseObject objectForKey:@"token"];
+            [UserInfo save:user];
+        }else if([[responseObject objectForKey:@"error"] isEqualToString:@"1002"]){
+            self.errorInfo.hidden=NO;
+            NSLog(@"账号密码错误");
+        }else if([[responseObject objectForKey:@"error"] isEqualToString:@"1001"]){
+            NSLog(@"位置错误 代码:1001");
+        }
+        
         NSLog(@"success,%@",responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        NSLog(@"网络异常错误");
     }];
 }
 

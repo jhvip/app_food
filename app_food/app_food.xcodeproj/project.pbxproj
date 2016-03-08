@@ -14,6 +14,7 @@
 		905187DC1C8D69A200AB5CD2 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187D51C8D69A200AB5CD2 /* AFURLResponseSerialization.m */; };
 		905187DD1C8D69A200AB5CD2 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187D71C8D69A200AB5CD2 /* AFURLSessionManager.m */; };
 		905187E21C8D701000AB5CD2 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187E11C8D701000AB5CD2 /* MBProgressHUD.m */; };
+		905187EA1C8EBD2B00AB5CD2 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187E91C8EBD2B00AB5CD2 /* UserInfo.m */; };
 		907B41EE1C5C643A0088C895 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 907B41ED1C5C64390088C895 /* main.m */; };
 		907B41F11C5C643A0088C895 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 907B41F01C5C643A0088C895 /* AppDelegate.m */; };
 		907B41F41C5C643A0088C895 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907B41F31C5C643A0088C895 /* ViewController.m */; };
@@ -41,6 +42,8 @@
 		905187DF1C8D701000AB5CD2 /* MBProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
 		905187E01C8D701000AB5CD2 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		905187E11C8D701000AB5CD2 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		905187E81C8EBD2B00AB5CD2 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		905187E91C8EBD2B00AB5CD2 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		907B41E91C5C64390088C895 /* app_food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app_food.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907B41ED1C5C64390088C895 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		907B41EF1C5C643A0088C895 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 		905187E31C8EB1AF00AB5CD2 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				905187E81C8EBD2B00AB5CD2 /* UserInfo.h */,
+				905187E91C8EBD2B00AB5CD2 /* UserInfo.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				905187DC1C8D69A200AB5CD2 /* AFURLResponseSerialization.m in Sources */,
 				90B6D2A61C7D4F5800A83B51 /* LoginViewController.m in Sources */,
 				907B41F41C5C643A0088C895 /* ViewController.m in Sources */,
+				905187EA1C8EBD2B00AB5CD2 /* UserInfo.m in Sources */,
 				905187E21C8D701000AB5CD2 /* MBProgressHUD.m in Sources */,
 				905187D81C8D69A200AB5CD2 /* AFHTTPSessionManager.m in Sources */,
 				905187DD1C8D69A200AB5CD2 /* AFURLSessionManager.m in Sources */,
