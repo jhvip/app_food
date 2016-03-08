@@ -43,16 +43,14 @@
         NSLog(@"success,%@",responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error,%@",error);
+        
     }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.logoImageView.image=[UIImage imageNamed:@"logo"];
-   
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
