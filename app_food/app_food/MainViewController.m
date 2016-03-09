@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 
 @interface MainViewController ()
+@property (weak, nonatomic) IBOutlet UIView *mainView;
 
 @end
 
