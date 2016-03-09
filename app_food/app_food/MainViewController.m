@@ -11,9 +11,30 @@
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 
+@property(nonatomic,assign)NSInteger currentIndex;
+
 @end
 
 @implementation MainViewController
+
+//自定义TabBar
+- (IBAction)tabBarButton:(UIButton*)sender {
+    NSInteger index=(int)sender.tag-10;
+    if (self.currentIndex==index) {
+        return;
+    }else{
+        _currentIndex=index;
+        NSLog(@"%ld",index);
+        
+        sender.backgroundColor=[UIColor whiteColor];
+        sender.selected=YES;
+        sender.highlighted=YES;
+        
+        
+    }
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

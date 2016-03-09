@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "MainViewController.h"
+#import "RequestUrl.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
@@ -34,12 +35,11 @@
         return;
     }
     
-    NSString *url=@"http://127.0.0.1:8080/app_food/UserLoginServlet";
     NSDictionary *param=@{@"userName":userName,
                           @"password":passWord,
                           };
     AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
-    [manage GET:url parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manage GET:LoginURL parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success,%@",responseObject);
         if([[responseObject objectForKey:@"error"] isEqualToString:@"1000"]){
@@ -58,6 +58,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置默认的logo
     self.logoImageView.image=[UIImage imageNamed:@"logo"];
 
 }
