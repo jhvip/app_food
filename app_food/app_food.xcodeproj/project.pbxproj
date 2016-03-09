@@ -16,7 +16,7 @@
 		905187E21C8D701000AB5CD2 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187E11C8D701000AB5CD2 /* MBProgressHUD.m */; };
 		907B41EE1C5C643A0088C895 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 907B41ED1C5C64390088C895 /* main.m */; };
 		907B41F11C5C643A0088C895 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 907B41F01C5C643A0088C895 /* AppDelegate.m */; };
-		907B41F41C5C643A0088C895 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907B41F31C5C643A0088C895 /* ViewController.m */; };
+		907B41F41C5C643A0088C895 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907B41F31C5C643A0088C895 /* MainViewController.m */; };
 		907B41F71C5C643A0088C895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907B41F51C5C643A0088C895 /* Main.storyboard */; };
 		907B41F91C5C643A0088C895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907B41F81C5C643A0088C895 /* Assets.xcassets */; };
 		907B41FC1C5C643A0088C895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907B41FA1C5C643A0088C895 /* LaunchScreen.storyboard */; };
@@ -45,8 +45,8 @@
 		907B41ED1C5C64390088C895 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		907B41EF1C5C643A0088C895 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		907B41F01C5C643A0088C895 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		907B41F21C5C643A0088C895 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		907B41F31C5C643A0088C895 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		907B41F21C5C643A0088C895 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		907B41F31C5C643A0088C895 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		907B41F61C5C643A0088C895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		907B41F81C5C643A0088C895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		907B41FB1C5C643A0088C895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,6 +130,30 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
+		905187EB1C8FB13600AB5CD2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		905187EC1C8FB13F00AB5CD2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		905187ED1C8FB14700AB5CD2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				907B41F51C5C643A0088C895 /* Main.storyboard */,
+				907B41F21C5C643A0088C895 /* MainViewController.h */,
+				907B41F31C5C643A0088C895 /* MainViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		907B41E01C5C64390088C895 = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +176,8 @@
 				905187C91C8D698400AB5CD2 /* lib */,
 				90B6D2A11C7D4EF100A83B51 /* other */,
 				90B6D2A01C7D4E9A00A83B51 /* order */,
-				90B6D29F1C7D4E9200A83B51 /* mian */,
-				90B6D29E1C7D4E8800A83B51 /* login */,
-				907B41F21C5C643A0088C895 /* ViewController.h */,
-				907B41F31C5C643A0088C895 /* ViewController.m */,
+				90B6D29F1C7D4E9200A83B51 /* main(主页) */,
+				90B6D29E1C7D4E8800A83B51 /* login(登陆) */,
 				907B41F81C5C643A0088C895 /* Assets.xcassets */,
 				907B41EC1C5C64390088C895 /* Supporting Files */,
 			);
@@ -170,21 +192,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		90B6D29E1C7D4E8800A83B51 /* login */ = {
+		90B6D29E1C7D4E8800A83B51 /* login(登陆) */ = {
 			isa = PBXGroup;
 			children = (
 				905187E51C8EB1C600AB5CD2 /* controller */,
 				905187E41C8EB1BD00AB5CD2 /* view */,
 				905187E31C8EB1AF00AB5CD2 /* model */,
 			);
-			name = login;
+			name = "login(登陆)";
 			sourceTree = "<group>";
 		};
-		90B6D29F1C7D4E9200A83B51 /* mian */ = {
+		90B6D29F1C7D4E9200A83B51 /* main(主页) */ = {
 			isa = PBXGroup;
 			children = (
+				905187ED1C8FB14700AB5CD2 /* controller */,
+				905187EC1C8FB13F00AB5CD2 /* view */,
+				905187EB1C8FB13600AB5CD2 /* model */,
 			);
-			name = mian;
+			name = "main(主页)";
 			sourceTree = "<group>";
 		};
 		90B6D2A01C7D4E9A00A83B51 /* order */ = {
@@ -197,7 +222,6 @@
 		90B6D2A11C7D4EF100A83B51 /* other */ = {
 			isa = PBXGroup;
 			children = (
-				907B41F51C5C643A0088C895 /* Main.storyboard */,
 				907B41FA1C5C643A0088C895 /* LaunchScreen.storyboard */,
 				907B41FD1C5C643A0088C895 /* Info.plist */,
 				907B41EF1C5C643A0088C895 /* AppDelegate.h */,
@@ -281,7 +305,7 @@
 				905187DA1C8D69A200AB5CD2 /* AFSecurityPolicy.m in Sources */,
 				905187DC1C8D69A200AB5CD2 /* AFURLResponseSerialization.m in Sources */,
 				90B6D2A61C7D4F5800A83B51 /* LoginViewController.m in Sources */,
-				907B41F41C5C643A0088C895 /* ViewController.m in Sources */,
+				907B41F41C5C643A0088C895 /* MainViewController.m in Sources */,
 				905187E21C8D701000AB5CD2 /* MBProgressHUD.m in Sources */,
 				905187D81C8D69A200AB5CD2 /* AFHTTPSessionManager.m in Sources */,
 				905187DD1C8D69A200AB5CD2 /* AFURLSessionManager.m in Sources */,

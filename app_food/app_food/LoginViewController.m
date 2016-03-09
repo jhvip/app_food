@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
+#import "MainViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
@@ -41,6 +42,14 @@
     [manage GET:url parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success,%@",responseObject);
+        if([[responseObject objectForKey:@"error"] isEqualToString:@"1000"]){
+            
+            // 登录成功跳转
+            MainViewController * main = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+            
+            [UIApplication sharedApplication].keyWindow.rootViewController = main;
+
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
