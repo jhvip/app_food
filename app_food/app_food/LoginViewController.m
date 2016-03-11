@@ -34,6 +34,7 @@
         self.pwError.hidden=NO;
         return;
     }
+
     
     NSDictionary *param=@{@"userName":userName,
                           @"password":passWord,
@@ -52,7 +53,7 @@
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        NSLog(@"error %@",error);
     }];
 }
 

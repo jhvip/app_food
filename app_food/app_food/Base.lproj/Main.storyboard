@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MH6-3L-F2s" userLabel="titleView">
@@ -86,6 +86,7 @@
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="冷菜">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -97,6 +98,7 @@
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="热菜">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -108,6 +110,7 @@
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="炒菜">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -119,6 +122,7 @@
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="饮料">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -162,18 +166,18 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="1Jm-kK-e89"/>
-                                                <exclude reference="J1Z-0f-0zb"/>
-                                                <exclude reference="SWG-Qx-KLg"/>
-                                                <exclude reference="k9f-2b-1eL"/>
-                                                <exclude reference="wJH-dz-s4d"/>
-                                                <exclude reference="IwK-hE-dr2"/>
-                                                <exclude reference="P0s-K7-r9x"/>
-                                                <exclude reference="Qdy-y2-BXV"/>
-                                                <exclude reference="aMt-f7-NTx"/>
                                                 <exclude reference="5tK-5p-Vf6"/>
                                                 <exclude reference="IMp-6K-md8"/>
                                                 <exclude reference="LGq-ER-ihV"/>
                                                 <exclude reference="wU5-nO-tb5"/>
+                                                <exclude reference="IwK-hE-dr2"/>
+                                                <exclude reference="P0s-K7-r9x"/>
+                                                <exclude reference="Qdy-y2-BXV"/>
+                                                <exclude reference="aMt-f7-NTx"/>
+                                                <exclude reference="J1Z-0f-0zb"/>
+                                                <exclude reference="SWG-Qx-KLg"/>
+                                                <exclude reference="k9f-2b-1eL"/>
+                                                <exclude reference="wJH-dz-s4d"/>
                                                 <exclude reference="4Y8-sT-TJ7"/>
                                                 <exclude reference="9Ok-kL-tFg"/>
                                                 <exclude reference="HUI-JX-4U9"/>
@@ -189,18 +193,18 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="1Jm-kK-e89"/>
-                                                <include reference="J1Z-0f-0zb"/>
-                                                <include reference="SWG-Qx-KLg"/>
-                                                <include reference="k9f-2b-1eL"/>
-                                                <include reference="wJH-dz-s4d"/>
-                                                <include reference="IwK-hE-dr2"/>
-                                                <include reference="P0s-K7-r9x"/>
-                                                <include reference="Qdy-y2-BXV"/>
-                                                <include reference="aMt-f7-NTx"/>
                                                 <include reference="5tK-5p-Vf6"/>
                                                 <include reference="IMp-6K-md8"/>
                                                 <include reference="LGq-ER-ihV"/>
                                                 <include reference="wU5-nO-tb5"/>
+                                                <include reference="IwK-hE-dr2"/>
+                                                <include reference="P0s-K7-r9x"/>
+                                                <include reference="Qdy-y2-BXV"/>
+                                                <include reference="aMt-f7-NTx"/>
+                                                <include reference="J1Z-0f-0zb"/>
+                                                <include reference="SWG-Qx-KLg"/>
+                                                <include reference="k9f-2b-1eL"/>
+                                                <include reference="wJH-dz-s4d"/>
                                                 <include reference="4Y8-sT-TJ7"/>
                                                 <include reference="9Ok-kL-tFg"/>
                                                 <include reference="HUI-JX-4U9"/>
@@ -292,25 +296,25 @@
                                 <exclude reference="ZZo-hL-NKM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4nI-KS-iW2"/>
-                                <exclude reference="8Th-Xg-UxS"/>
-                                <exclude reference="bmI-k0-MiO"/>
+                                <exclude reference="iqg-h6-uAr"/>
                                 <exclude reference="9GL-nZ-7BE"/>
                                 <exclude reference="UPd-85-oXv"/>
                                 <exclude reference="gTx-MQ-26r"/>
                                 <exclude reference="p0H-UV-bYP"/>
-                                <exclude reference="8rQ-v3-4ra"/>
-                                <exclude reference="Z3C-YI-VOx"/>
-                                <exclude reference="eS4-5X-Vf5"/>
                                 <exclude reference="JF6-fw-xKn"/>
                                 <exclude reference="Yci-Pf-zAz"/>
                                 <exclude reference="afM-YX-jlc"/>
                                 <exclude reference="fRR-bl-43j"/>
+                                <exclude reference="4nI-KS-iW2"/>
+                                <exclude reference="8Th-Xg-UxS"/>
+                                <exclude reference="bmI-k0-MiO"/>
                                 <exclude reference="FNG-u8-fwW"/>
                                 <exclude reference="dcf-rq-qT0"/>
                                 <exclude reference="grK-0Z-lNX"/>
                                 <exclude reference="rC2-4e-nJv"/>
-                                <exclude reference="iqg-h6-uAr"/>
+                                <exclude reference="8rQ-v3-4ra"/>
+                                <exclude reference="Z3C-YI-VOx"/>
+                                <exclude reference="eS4-5X-Vf5"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -322,31 +326,32 @@
                                 <include reference="ZZo-hL-NKM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4nI-KS-iW2"/>
-                                <include reference="8Th-Xg-UxS"/>
-                                <include reference="bmI-k0-MiO"/>
+                                <include reference="iqg-h6-uAr"/>
                                 <include reference="9GL-nZ-7BE"/>
                                 <include reference="UPd-85-oXv"/>
                                 <include reference="gTx-MQ-26r"/>
                                 <include reference="p0H-UV-bYP"/>
-                                <include reference="8rQ-v3-4ra"/>
-                                <include reference="Z3C-YI-VOx"/>
-                                <include reference="eS4-5X-Vf5"/>
                                 <include reference="JF6-fw-xKn"/>
                                 <include reference="Yci-Pf-zAz"/>
                                 <include reference="afM-YX-jlc"/>
                                 <include reference="fRR-bl-43j"/>
+                                <include reference="4nI-KS-iW2"/>
+                                <include reference="8Th-Xg-UxS"/>
+                                <include reference="bmI-k0-MiO"/>
                                 <include reference="FNG-u8-fwW"/>
                                 <include reference="dcf-rq-qT0"/>
                                 <include reference="grK-0Z-lNX"/>
                                 <include reference="rC2-4e-nJv"/>
-                                <include reference="iqg-h6-uAr"/>
+                                <include reference="8rQ-v3-4ra"/>
+                                <include reference="Z3C-YI-VOx"/>
+                                <include reference="eS4-5X-Vf5"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="mainView" destination="wSB-bq-ecG" id="St7-yS-43z"/>
+                        <outlet property="tabBarView" destination="TNZ-ph-vVf" id="dKe-hJ-lzd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
