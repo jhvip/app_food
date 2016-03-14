@@ -11,6 +11,7 @@
 #import "MBProgressHUD.h"
 #import "MainViewController.h"
 #import "RequestUrl.h"
+#import "User.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
@@ -45,6 +46,11 @@
         NSLog(@"success,%@",responseObject);
         if([[responseObject objectForKey:@"error"] isEqualToString:@"1000"]){
             
+            User *user=[[User alloc]init];
+            user.userName=[responseObject objectForKey:@"userName"];
+            user.token=[responseObject objectForKey:@"token"];
+            [User save:user];
+        
             // 登录成功跳转
             MainViewController * main = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
             

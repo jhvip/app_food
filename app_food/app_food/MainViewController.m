@@ -10,10 +10,11 @@
 #import "MenuView.h"
 #import "AFNetworking.h"
 #import "User.h"
+#import "MenuInfo.h"
 #import "RequestUrl.h"
 
 @interface MainViewController ()
-@property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet UIView *menuView;
 
 @property(nonatomic,assign)NSInteger currentIndex;
 
@@ -40,7 +41,9 @@
         sender.backgroundColor=[UIColor whiteColor];
         sender.selected=YES;
         sender.tintColor=[UIColor whiteColor];
-        [self loadMenuView];
+        
+        
+        [self loadMenuView:(int)sender.tag-10];
     }
     
 }
@@ -57,25 +60,51 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)loadMenuView{
+-(void)loadMenuView:(int)class{
     User *user=[User takeUser];
     NSDictionary *param=@{@"userName":user.userName,
                           @"token":user.token,
+                          @"status":@"find",
+                          @"class":[NSString stringWithFormat:@"%d",class]
                           };
     AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
     [manage GET:MenuURL parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success,%@",responseObject);
-        if([[responseObject objectForKey:@"error"] isEqualToString:@"1000"]){
-            
-           
-        }
+        
+        [self showView:responseObject];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error %@",error);
     }];
-    [self.mainView reloadInputViews];
+    
+}
 
+-(void)showView:(NSArray*)info{
+    NSArray *menuList=[MenuInfo menuSetInfo:info];
+    CGFloat width=self.menuView.frame.size.width;
+    
+    CGFloat viewWidth=(width-85)*0.25;
+    CGFloat viewHeight=viewWidth*1.2;
+    NSLog(@"%f,%f",viewHeight,viewWidth);
+    
+    //清空之前的view
+    for (UIView *view in self.menuView.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    for (int i=0; i<menuList.count; i++) {
+        int row=i%4;
+        int col=i/4;
+        MenuView *menuView=[[MenuView alloc]initWithFrame:CGRectMake(row*viewWidth+15*row+20, col*viewHeight+15*col+20, viewWidth,viewHeight)];
+        menuView.backgroundColor=[UIColor redColor];
+        [self.menuView addSubview:menuView];
+    }
+    
+    
+    
+    
+    
 }
 
 

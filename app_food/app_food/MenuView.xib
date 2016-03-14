@@ -92,7 +92,7 @@
                 <outlet property="menuSureButton" destination="dfS-gR-n4L" id="XYD-NI-Mdm"/>
                 <outlet property="menuTitleLable" destination="Kql-GU-WlA" id="RaH-BZ-YNq"/>
             </connections>
-            <point key="canvasLocation" x="205.5" y="73.5"/>
+            <point key="canvasLocation" x="272.5" y="40.5"/>
         </view>
     </objects>
 </document>

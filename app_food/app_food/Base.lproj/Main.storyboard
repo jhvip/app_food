@@ -212,11 +212,19 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcS-h3-KX7">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="NcS-h3-KX7" secondAttribute="bottom" constant="10" id="AtR-yL-XHX"/>
                                     <constraint firstAttribute="trailing" secondItem="TNZ-ph-vVf" secondAttribute="trailing" id="D8f-rS-Hxo"/>
+                                    <constraint firstItem="NcS-h3-KX7" firstAttribute="leading" secondItem="wSB-bq-ecG" secondAttribute="leading" constant="10" id="Hod-uU-Cj4"/>
                                     <constraint firstItem="TNZ-ph-vVf" firstAttribute="leading" secondItem="wSB-bq-ecG" secondAttribute="leading" id="L2P-6t-imy"/>
+                                    <constraint firstAttribute="trailing" secondItem="NcS-h3-KX7" secondAttribute="trailing" constant="10" id="N7u-Ij-cTU"/>
+                                    <constraint firstItem="NcS-h3-KX7" firstAttribute="top" secondItem="TNZ-ph-vVf" secondAttribute="bottom" constant="10" id="TI1-Tr-Iur"/>
                                     <constraint firstItem="TNZ-ph-vVf" firstAttribute="top" secondItem="wSB-bq-ecG" secondAttribute="top" constant="61" id="bm6-Sh-YUa">
                                         <variation key="heightClass=regular" constant="0.0"/>
                                     </constraint>
@@ -224,21 +232,31 @@
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="TNZ-ph-vVf"/>
+                                        <exclude reference="NcS-h3-KX7"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="D8f-rS-Hxo"/>
                                         <exclude reference="L2P-6t-imy"/>
                                         <exclude reference="bm6-Sh-YUa"/>
+                                        <exclude reference="AtR-yL-XHX"/>
+                                        <exclude reference="Hod-uU-Cj4"/>
+                                        <exclude reference="N7u-Ij-cTU"/>
+                                        <exclude reference="TI1-Tr-Iur"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="subviews">
                                         <include reference="TNZ-ph-vVf"/>
+                                        <include reference="NcS-h3-KX7"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="D8f-rS-Hxo"/>
                                         <include reference="L2P-6t-imy"/>
                                         <include reference="bm6-Sh-YUa"/>
+                                        <include reference="AtR-yL-XHX"/>
+                                        <include reference="Hod-uU-Cj4"/>
+                                        <include reference="N7u-Ij-cTU"/>
+                                        <include reference="TI1-Tr-Iur"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -350,7 +368,7 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="mainView" destination="wSB-bq-ecG" id="St7-yS-43z"/>
+                        <outlet property="menuView" destination="NcS-h3-KX7" id="6Ru-ox-Zeb"/>
                         <outlet property="tabBarView" destination="TNZ-ph-vVf" id="dKe-hJ-lzd"/>
                     </connections>
                 </viewController>

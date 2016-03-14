@@ -12,7 +12,10 @@
 @property(nonatomic,strong)NSString *image;
 @property(nonatomic,strong)NSString *menuTitle;
 @property(nonatomic,strong)NSString *menuMoney;
+@property(nonatomic,strong)NSString *menuNo;
+@property(nonatomic,strong)NSString *menuDiscount;
+
 
 +(MenuInfo*)menuInfoSet:(NSDictionary*)dict;
-
++(NSArray *)menuSetInfo:(NSArray *)menuInfoList;
 @end

@@ -16,7 +16,7 @@
 // 登陆URL
 #define LoginURL [NSString stringWithFormat:@"http://%@/app_food/UserLoginServlet",ip]
 //菜单URL
-#define MenuURL [NSString stringWithFormat:@"http://%@/app_food/MenuServlet",ip]
+#define MenuURL [NSString stringWithFormat:@"http://%@/app_food/DishControlServlet",ip]
 
 
 

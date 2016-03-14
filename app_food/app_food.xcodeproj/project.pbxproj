@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		901190801C92927C0083345C /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9011907F1C92927C0083345C /* MenuView.m */; };
 		901190831C9297160083345C /* MenuInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 901190821C9297160083345C /* MenuInfo.m */; };
 		901190861C929EB40083345C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 901190851C929EB40083345C /* User.m */; };
+		901FE7CF1C96A3D3007F8219 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FE7CE1C96A3D3007F8219 /* MenuView.m */; };
 		905187D81C8D69A200AB5CD2 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187CC1C8D69A200AB5CD2 /* AFHTTPSessionManager.m */; };
 		905187D91C8D69A200AB5CD2 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187CF1C8D69A200AB5CD2 /* AFNetworkReachabilityManager.m */; };
 		905187DA1C8D69A200AB5CD2 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187D11C8D69A200AB5CD2 /* AFSecurityPolicy.m */; };
@@ -29,12 +29,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9011907E1C92927C0083345C /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
-		9011907F1C92927C0083345C /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		901190811C9297160083345C /* MenuInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuInfo.h; sourceTree = "<group>"; };
 		901190821C9297160083345C /* MenuInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuInfo.m; sourceTree = "<group>"; };
 		901190841C929EB40083345C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		901190851C929EB40083345C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		901FE7CD1C96A3D3007F8219 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		901FE7CE1C96A3D3007F8219 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		905187CB1C8D69A200AB5CD2 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		905187CC1C8D69A200AB5CD2 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		905187CD1C8D69A200AB5CD2 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -157,8 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				905187EE1C8FF04200AB5CD2 /* MenuView.xib */,
-				9011907E1C92927C0083345C /* MenuView.h */,
-				9011907F1C92927C0083345C /* MenuView.m */,
+				901FE7CD1C96A3D3007F8219 /* MenuView.h */,
+				901FE7CE1C96A3D3007F8219 /* MenuView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -328,7 +328,6 @@
 				90B6D2A61C7D4F5800A83B51 /* LoginViewController.m in Sources */,
 				907B41F41C5C643A0088C895 /* MainViewController.m in Sources */,
 				905187E21C8D701000AB5CD2 /* MBProgressHUD.m in Sources */,
-				901190801C92927C0083345C /* MenuView.m in Sources */,
 				905187D81C8D69A200AB5CD2 /* AFHTTPSessionManager.m in Sources */,
 				905187DD1C8D69A200AB5CD2 /* AFURLSessionManager.m in Sources */,
 				901190861C929EB40083345C /* User.m in Sources */,
@@ -337,6 +336,7 @@
 				905187D91C8D69A200AB5CD2 /* AFNetworkReachabilityManager.m in Sources */,
 				907B41EE1C5C643A0088C895 /* main.m in Sources */,
 				905187DB1C8D69A200AB5CD2 /* AFURLRequestSerialization.m in Sources */,
+				901FE7CF1C96A3D3007F8219 /* MenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
