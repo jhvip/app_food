@@ -235,13 +235,13 @@
                                         <exclude reference="NcS-h3-KX7"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="D8f-rS-Hxo"/>
-                                        <exclude reference="L2P-6t-imy"/>
-                                        <exclude reference="bm6-Sh-YUa"/>
                                         <exclude reference="AtR-yL-XHX"/>
                                         <exclude reference="Hod-uU-Cj4"/>
                                         <exclude reference="N7u-Ij-cTU"/>
                                         <exclude reference="TI1-Tr-Iur"/>
+                                        <exclude reference="D8f-rS-Hxo"/>
+                                        <exclude reference="L2P-6t-imy"/>
+                                        <exclude reference="bm6-Sh-YUa"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
@@ -250,13 +250,13 @@
                                         <include reference="NcS-h3-KX7"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="D8f-rS-Hxo"/>
-                                        <include reference="L2P-6t-imy"/>
-                                        <include reference="bm6-Sh-YUa"/>
                                         <include reference="AtR-yL-XHX"/>
                                         <include reference="Hod-uU-Cj4"/>
                                         <include reference="N7u-Ij-cTU"/>
                                         <include reference="TI1-Tr-Iur"/>
+                                        <include reference="D8f-rS-Hxo"/>
+                                        <include reference="L2P-6t-imy"/>
+                                        <include reference="bm6-Sh-YUa"/>
                                     </mask>
                                 </variation>
                             </view>

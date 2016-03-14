@@ -96,8 +96,9 @@
     for (int i=0; i<menuList.count; i++) {
         int row=i%4;
         int col=i/4;
-        MenuView *menuView=[[MenuView alloc]initWithFrame:CGRectMake(row*viewWidth+15*row+20, col*viewHeight+15*col+20, viewWidth,viewHeight)];
-        menuView.backgroundColor=[UIColor redColor];
+        MenuView *menuView=[MenuView menuViewSetInfo:menuList[i]];
+        menuView.frame=CGRectMake(row*viewWidth+15*row+20, col*viewHeight+15*col+20, viewWidth,viewHeight);
+        menuView.backgroundColor=[UIColor colorWithRed:0.3 green:0.5 blue:0.4 alpha:0.8];
         [self.menuView addSubview:menuView];
     }
     
