@@ -16,12 +16,23 @@
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *menuView;
 
-@property(nonatomic,assign)NSInteger currentIndex;
+@property (nonatomic,assign)NSInteger currentIndex;
 
 @property (weak, nonatomic) IBOutlet UIView *tabBarView;
+//菜单order
+@property (nonatomic,strong) NSMutableArray *orderArray;
+
 @end
 
+
 @implementation MainViewController
+//懒加载
+-(NSMutableArray *)orderArray{
+    if (_orderArray==nil) {
+        _orderArray=[NSMutableArray array];
+    }
+    return _orderArray;
+}
 
 //自定义TabBar
 - (IBAction)tabBarButton:(UIButton*)sender {
@@ -51,7 +62,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.currentIndex=10;
+    [self loadMenuView:0];
 
 }
 
@@ -78,14 +89,21 @@
         NSLog(@"error %@",error);
     }];
     
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    NSArray *dic = [ud objectForKey:@"dishes"];
+    for(NSDictionary *dict in dic){
+        NSLog(@"=====%@",[dict objectForKey:@"name"]);
+    }
+    
+    
 }
 
 -(void)showView:(NSArray*)info{
     NSArray *menuList=[MenuInfo menuSetInfo:info];
     CGFloat width=self.menuView.frame.size.width;
     
-    CGFloat viewWidth=(width-85)*0.25;
-    CGFloat viewHeight=viewWidth*1.2;
+    CGFloat viewWidth=(width-85)*0.33;
+    CGFloat viewHeight=viewWidth*1.22;
     NSLog(@"%f,%f",viewHeight,viewWidth);
     
     //清空之前的view
@@ -94,10 +112,10 @@
     }
     
     for (int i=0; i<menuList.count; i++) {
-        int row=i%4;
-        int col=i/4;
+        int row=i%3;
+        int col=i/3;
         MenuView *menuView=[MenuView menuViewSetInfo:menuList[i]];
-        menuView.frame=CGRectMake(row*viewWidth+15*row+20, col*viewHeight+15*col+20, viewWidth,viewHeight);
+        menuView.frame=CGRectMake(row*viewWidth+15*row+30, col*viewHeight+15*col+20, viewWidth,viewHeight);
         menuView.backgroundColor=[UIColor colorWithRed:0.3 green:0.5 blue:0.4 alpha:0.8];
         [self.menuView addSubview:menuView];
     }

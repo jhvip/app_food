@@ -21,8 +21,8 @@
                 <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56U-V9-apA" userLabel="lableView">
                     <rect key="frame" x="0.0" y="159" width="189" height="30"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kql-GU-WlA" userLabel="醋溜土豆丝">
-                            <rect key="frame" x="30" y="5" width="42" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kql-GU-WlA" userLabel="醋溜土豆丝">
+                            <rect key="frame" x="10" y="1.5" width="56" height="27.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -30,19 +30,19 @@
                     </subviews>
                     <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="Kql-GU-WlA" firstAttribute="leading" secondItem="56U-V9-apA" secondAttribute="leading" constant="30" id="9bR-9S-4BJ"/>
+                        <constraint firstItem="Kql-GU-WlA" firstAttribute="leading" secondItem="56U-V9-apA" secondAttribute="leading" constant="10" identifier="0.3" id="EdG-nd-sgN"/>
                         <constraint firstAttribute="height" constant="30" id="GrX-AH-qBt"/>
                         <constraint firstItem="Kql-GU-WlA" firstAttribute="centerY" secondItem="56U-V9-apA" secondAttribute="centerY" id="fEj-Iq-kjk"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ6-km-ib1">
-                    <rect key="frame" x="49" y="197" width="31.5" height="29.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ6-km-ib1">
+                    <rect key="frame" x="32.5" y="189" width="42.5" height="44"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="topRight" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-gR-n4L">
-                    <rect key="frame" x="143" y="197" width="30" height="29.5"/>
+                <button opaque="NO" contentMode="topRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-gR-n4L">
+                    <rect key="frame" x="127" y="189" width="46" height="44"/>
                     <state key="normal">
                         <attributedString key="attributedTitle">
                             <fragment content="点菜">
@@ -52,9 +52,12 @@
                             </fragment>
                         </attributedString>
                     </state>
+                    <connections>
+                        <action selector="addOrder:" destination="iN0-l3-epB" eventType="touchUpInside" id="gJi-Fd-gkN"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1t-KT-Ykx">
-                    <rect key="frame" x="30" y="197" width="11" height="29.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1t-KT-Ykx">
+                    <rect key="frame" x="10" y="189" width="14.5" height="44"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -65,12 +68,11 @@
                 <constraint firstItem="dfS-gR-n4L" firstAttribute="bottom" secondItem="O1t-KT-Ykx" secondAttribute="bottom" id="47Y-yg-6Fw"/>
                 <constraint firstAttribute="trailing" secondItem="dfS-gR-n4L" secondAttribute="trailing" constant="16" id="DFO-hi-BtV"/>
                 <constraint firstItem="7KV-wU-AvE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hxi-5f-r6y"/>
-                <constraint firstItem="O1t-KT-Ykx" firstAttribute="top" secondItem="56U-V9-apA" secondAttribute="bottom" constant="3" id="IzC-y9-ecJ"/>
                 <constraint firstItem="7KV-wU-AvE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KlI-lZ-b1N"/>
+                <constraint firstItem="O1t-KT-Ykx" firstAttribute="top" secondItem="56U-V9-apA" secondAttribute="bottom" id="RnE-1K-378"/>
                 <constraint firstItem="56U-V9-apA" firstAttribute="trailing" secondItem="7KV-wU-AvE" secondAttribute="trailing" id="SnP-w1-yyl"/>
                 <constraint firstItem="O1t-KT-Ykx" firstAttribute="leading" secondItem="Kql-GU-WlA" secondAttribute="leading" id="apB-Pg-dHg"/>
                 <constraint firstItem="DQ6-km-ib1" firstAttribute="bottom" secondItem="O1t-KT-Ykx" secondAttribute="bottom" id="b7V-qd-aCm"/>
-                <constraint firstItem="O1t-KT-Ykx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="bYu-R7-wu4"/>
                 <constraint firstItem="56U-V9-apA" firstAttribute="leading" secondItem="7KV-wU-AvE" secondAttribute="leading" id="caO-ZY-T8D"/>
                 <constraint firstItem="56U-V9-apA" firstAttribute="bottom" secondItem="7KV-wU-AvE" secondAttribute="bottom" id="hGG-eV-SDu"/>
                 <constraint firstItem="DQ6-km-ib1" firstAttribute="leading" secondItem="O1t-KT-Ykx" secondAttribute="trailing" constant="8" id="nfP-FG-1Eg"/>
@@ -81,11 +83,6 @@
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="bYu-R7-wu4"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="menuImageView" destination="7KV-wU-AvE" id="2p1-6O-oCT"/>
                 <outlet property="menuMoneyLable" destination="DQ6-km-ib1" id="q5D-Wu-3X6"/>

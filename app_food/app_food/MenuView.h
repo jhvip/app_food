@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *menuMoneyLable;
 @property (weak, nonatomic) IBOutlet UIButton *menuSureButton;
 
+
 +(MenuView*)menuViewSetInfo:(MenuInfo*)menuInfo;
 @end
