@@ -10,6 +10,8 @@
 		901190831C9297160083345C /* MenuInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 901190821C9297160083345C /* MenuInfo.m */; };
 		901190861C929EB40083345C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 901190851C929EB40083345C /* User.m */; };
 		901FE7CF1C96A3D3007F8219 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FE7CE1C96A3D3007F8219 /* MenuView.m */; };
+		904812241C9A78EB001420E4 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 904812231C9A78EB001420E4 /* OrderCell.m */; };
+		904812261C9A78FC001420E4 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904812251C9A78FC001420E4 /* OrderCell.xib */; };
 		905187D81C8D69A200AB5CD2 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187CC1C8D69A200AB5CD2 /* AFHTTPSessionManager.m */; };
 		905187D91C8D69A200AB5CD2 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187CF1C8D69A200AB5CD2 /* AFNetworkReachabilityManager.m */; };
 		905187DA1C8D69A200AB5CD2 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 905187D11C8D69A200AB5CD2 /* AFSecurityPolicy.m */; };
@@ -35,6 +37,9 @@
 		901190851C929EB40083345C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		901FE7CD1C96A3D3007F8219 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
 		901FE7CE1C96A3D3007F8219 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		904812221C9A78EB001420E4 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		904812231C9A78EB001420E4 /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		904812251C9A78FC001420E4 /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
 		905187CB1C8D69A200AB5CD2 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		905187CC1C8D69A200AB5CD2 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		905187CD1C8D69A200AB5CD2 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -159,6 +164,9 @@
 				905187EE1C8FF04200AB5CD2 /* MenuView.xib */,
 				901FE7CD1C96A3D3007F8219 /* MenuView.h */,
 				901FE7CE1C96A3D3007F8219 /* MenuView.m */,
+				904812221C9A78EB001420E4 /* OrderCell.h */,
+				904812231C9A78EB001420E4 /* OrderCell.m */,
+				904812251C9A78FC001420E4 /* OrderCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 			files = (
 				907B41FC1C5C643A0088C895 /* LaunchScreen.storyboard in Resources */,
 				90B6D2A31C7D4F3500A83B51 /* Login.storyboard in Resources */,
+				904812261C9A78FC001420E4 /* OrderCell.xib in Resources */,
 				905187EF1C8FF04200AB5CD2 /* MenuView.xib in Resources */,
 				907B41F91C5C643A0088C895 /* Assets.xcassets in Resources */,
 				907B41F71C5C643A0088C895 /* Main.storyboard in Resources */,
@@ -332,6 +341,7 @@
 				905187DD1C8D69A200AB5CD2 /* AFURLSessionManager.m in Sources */,
 				901190861C929EB40083345C /* User.m in Sources */,
 				907B41F11C5C643A0088C895 /* AppDelegate.m in Sources */,
+				904812241C9A78EB001420E4 /* OrderCell.m in Sources */,
 				901190831C9297160083345C /* MenuInfo.m in Sources */,
 				905187D91C8D69A200AB5CD2 /* AFNetworkReachabilityManager.m in Sources */,
 				907B41EE1C5C643A0088C895 /* main.m in Sources */,

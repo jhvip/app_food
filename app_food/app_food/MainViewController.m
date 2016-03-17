@@ -12,17 +12,20 @@
 #import "User.h"
 #import "MenuInfo.h"
 #import "RequestUrl.h"
+#import "OrderCell.h"
 
-@interface MainViewController ()<MenuViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
-@property (weak, nonatomic) IBOutlet UIView *menuView;
+@interface MainViewController ()<MenuViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic,assign)NSInteger currentIndex;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIView *tabBarView;
 //菜单order
 @property (nonatomic,strong) NSMutableArray *orderArray;
 @property (nonatomic,strong) NSArray *menuList;
+@property (nonatomic,strong) NSArray *orderList;
 
 @end
 
@@ -51,9 +54,9 @@
         }
     
         _currentIndex=index;
-        sender.backgroundColor=[UIColor whiteColor];
+        sender.backgroundColor=[UIColor colorWithRed:0.8392 green:0.8392 blue:0.8392 alpha:1.0f];
         sender.selected=YES;
-        sender.tintColor=[UIColor whiteColor];
+        sender.tintColor=[UIColor colorWithRed:0.8392 green:0.8392 blue:0.8392 alpha:1.0f];
         
         
         [self loadMenuView:(int)sender.tag-10];
@@ -64,8 +67,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    //设置初始选项
     [self loadMenuView:0];
+    //加载collection
+    [self collectionSet];
+    //加载tableVIew
+    [self tableViewSet];
     
+   
+    
+}
+
+#pragma mark-设置collection
+-(void)collectionSet{
     self.collectionView.delegate=self;
     self.collectionView.dataSource=self;
     
@@ -74,14 +88,17 @@
     flow.scrollDirection = UICollectionViewScrollDirectionVertical;
     flow.minimumLineSpacing = 15;//最小行间距(当垂直布局时是行间距，当水平布局时可以理解为列间距)
     flow.minimumInteritemSpacing = 20;//两个单元格之间的最小间距
-    
-
-    
-    
-    
     [self.collectionView setCollectionViewLayout:flow];
+    
 }
 
+#pragma mark-设置tableView
+-(void)tableViewSet{
+    self.tableView.delegate=self;
+    self.tableView.dataSource=self;
+    [self.tableView registerNib:[UINib nibWithNibName:@"OrderCell" bundle:nil] forCellReuseIdentifier:@"orderList"];
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -120,8 +137,9 @@
 
 
 #pragma mark-点菜代理按钮
--(void)MenuViewReloadTableView{
-    NSLog(@"刷新");
+-(void)MenuViewReloadTableView:(NSArray *)orderList{
+    self.orderList=orderList;
+    [self.tableView reloadData];
 }
 #pragma mark-collectionView 代理方法
 
@@ -132,7 +150,7 @@
     
     MenuView *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"MenuView" forIndexPath:indexPath];
     cell.delegate=self;
-    cell.backgroundColor=[UIColor grayColor];
+    cell.backgroundColor=[UIColor whiteColor];
     [cell menuViewSetInfo:self.menuList[indexPath.row]];
 
     return cell;
@@ -161,5 +179,33 @@
         return 0;
     }
 }
+
+#pragma mark-设置tableView数据源和代理方法
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (self.orderList) {
+        return self.orderList.count;
+    }
+    return 0;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    OrderCell *cell=[tableView dequeueReusableCellWithIdentifier:@"orderList" forIndexPath:indexPath];
+    if (!cell) {
+        cell=[[OrderCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"orderList"];
+    }
+    [cell orderCellSetCell:self.orderList[indexPath.row] num:indexPath.row];
+    cell.backgroundColor=[UIColor colorWithRed:0.8392 green:0.8392 blue:0.8392 alpha:1.0f];
+    return cell;
+
+}
+
+
+
+
+
 
 @end

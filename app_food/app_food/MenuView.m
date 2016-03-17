@@ -37,8 +37,8 @@
     
     [ud setObject:array forKey:@"dishes"];
     
-    if ([self.delegate respondsToSelector:@selector(MenuViewReloadTableView)]) {
-        [self.delegate MenuViewReloadTableView];
+    if ([self.delegate respondsToSelector:@selector(MenuViewReloadTableView:)]) {
+        [self.delegate MenuViewReloadTableView:array];
     }
 }
 

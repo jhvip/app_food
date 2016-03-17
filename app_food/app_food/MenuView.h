@@ -11,7 +11,7 @@
 
 @protocol MenuViewDelegate <NSObject>
 
--(void)MenuViewReloadTableView;
+-(void)MenuViewReloadTableView:(NSArray*)orderList;
 
 @end
 
@@ -21,7 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *menuMoneyLable;
 @property (weak, nonatomic) IBOutlet UIButton *menuSureButton;
-
+@property (strong,nonatomic)NSArray *orderList;
 
 @property (nonatomic,weak) id<MenuViewDelegate> delegate;
 -(void)menuViewSetInfo:(MenuInfo*)menuInfo;

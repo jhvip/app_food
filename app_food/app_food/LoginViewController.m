@@ -55,7 +55,11 @@
             MainViewController * main = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
             
             [UIApplication sharedApplication].keyWindow.rootViewController = main;
-
+            
+            
+            NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+            NSMutableArray *array=[NSMutableArray array];
+            [ud setObject:array forKey:@"dishes"];
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
