@@ -10,13 +10,13 @@
 #define RequestUrl_h
 
 
-#define ip @"127.0.0.1:8080"
+#define ip @"127.0.0.1:8080/app_food"
 
 
 // 登陆URL
-#define LoginURL [NSString stringWithFormat:@"http://%@/app_food/UserLoginServlet",ip]
+#define LoginURL [NSString stringWithFormat:@"http://%@/UserLoginServlet",ip]
 //菜单URL
-#define MenuURL [NSString stringWithFormat:@"http://%@/app_food/DishControlServlet",ip]
+#define MenuURL [NSString stringWithFormat:@"http://%@/DishControlServlet",ip]
 
 
 

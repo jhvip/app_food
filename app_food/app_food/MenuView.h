@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 @class MenuInfo;
+
+@protocol MenuViewDelegate <NSObject>
+
+-(void)MenuViewReloadTableView;
+
+@end
+
 @interface MenuView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *menuImageView;
 @property (weak, nonatomic) IBOutlet UILabel *menuTitleLable;
@@ -15,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *menuSureButton;
 
 
+@property (nonatomic,weak) id<MenuViewDelegate> delegate;
 +(MenuView*)menuViewSetInfo:(MenuInfo*)menuInfo;
 @end

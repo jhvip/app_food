@@ -13,7 +13,7 @@
 #import "MenuInfo.h"
 #import "RequestUrl.h"
 
-@interface MainViewController ()
+@interface MainViewController ()<MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *menuView;
 
 @property (nonatomic,assign)NSInteger currentIndex;
@@ -63,6 +63,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self loadMenuView:0];
+    
+    
 
 }
 
@@ -89,12 +91,6 @@
         NSLog(@"error %@",error);
     }];
     
-    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
-    NSArray *dic = [ud objectForKey:@"dishes"];
-    for(NSDictionary *dict in dic){
-        NSLog(@"=====%@",[dict objectForKey:@"name"]);
-    }
-    
     
 }
 
@@ -103,7 +99,7 @@
     CGFloat width=self.menuView.frame.size.width;
     
     CGFloat viewWidth=(width-85)*0.33;
-    CGFloat viewHeight=viewWidth*1.22;
+    CGFloat viewHeight=viewWidth*1.2;
     NSLog(@"%f,%f",viewHeight,viewWidth);
     
     //清空之前的view
@@ -115,15 +111,16 @@
         int row=i%3;
         int col=i/3;
         MenuView *menuView=[MenuView menuViewSetInfo:menuList[i]];
+        menuView.delegate=self;
         menuView.frame=CGRectMake(row*viewWidth+15*row+30, col*viewHeight+15*col+20, viewWidth,viewHeight);
-        menuView.backgroundColor=[UIColor colorWithRed:0.3 green:0.5 blue:0.4 alpha:0.8];
+        menuView.backgroundColor=[UIColor grayColor];
         [self.menuView addSubview:menuView];
     }
     
-    
-    
-    
-    
+}
+
+-(void)MenuViewReloadTableView{
+    NSLog(@"刷新");
 }
 
 

@@ -8,16 +8,23 @@
 
 #import "MenuView.h"
 #import "MenuInfo.h"
-
+#import "RequestUrl.h"
 @implementation MenuView
 
 
 +(MenuView *)menuViewSetInfo:(MenuInfo *)menuInfo{
     MenuView *view=[[[NSBundle mainBundle]loadNibNamed:@"MenuView" owner:self options:nil] lastObject];
-    view.menuImageView.image=[UIImage imageNamed:@"logo"];
+    
+    NSString *url=[NSString stringWithFormat:@"http://%@/image/%@",ip,menuInfo.image];
+    NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+    view.menuImageView.image=[UIImage imageWithData:imageData];
     view.menuSureButton.tag=(int)menuInfo.menuNo;
     view.menuMoneyLable.text=menuInfo.menuMoney;
     view.menuTitleLable.text=menuInfo.menuTitle;
+    
+    [view.menuSureButton.layer setMasksToBounds:YES];
+    [view.menuSureButton.layer setCornerRadius:5.0];
+    [view.menuSureButton.layer setBorderWidth:2.0];
     
     return view;
 }
@@ -30,6 +37,9 @@
     
     [ud setObject:array forKey:@"dishes"];
     
+    if ([self.delegate respondsToSelector:@selector(MenuViewReloadTableView)]) {
+        [self.delegate MenuViewReloadTableView];
+    }
 }
 
 @end
