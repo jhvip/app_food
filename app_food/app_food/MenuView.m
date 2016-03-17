@@ -12,21 +12,21 @@
 @implementation MenuView
 
 
-+(MenuView *)menuViewSetInfo:(MenuInfo *)menuInfo{
-    MenuView *view=[[[NSBundle mainBundle]loadNibNamed:@"MenuView" owner:self options:nil] lastObject];
+-(void)menuViewSetInfo:(MenuInfo *)menuInfo{
+   // MenuView *view=[[[NSBundle mainBundle]loadNibNamed:@"MenuView" owner:self options:nil] lastObject];
     
     NSString *url=[NSString stringWithFormat:@"http://%@/image/%@",ip,menuInfo.image];
     NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-    view.menuImageView.image=[UIImage imageWithData:imageData];
-    view.menuSureButton.tag=(int)menuInfo.menuNo;
-    view.menuMoneyLable.text=menuInfo.menuMoney;
-    view.menuTitleLable.text=menuInfo.menuTitle;
+    self.menuImageView.image=[UIImage imageWithData:imageData];
+    self.menuSureButton.tag=(int)menuInfo.menuNo;
+    self.menuMoneyLable.text=menuInfo.menuMoney;
+    self.menuTitleLable.text=menuInfo.menuTitle;
     
-    [view.menuSureButton.layer setMasksToBounds:YES];
-    [view.menuSureButton.layer setCornerRadius:5.0];
-    [view.menuSureButton.layer setBorderWidth:2.0];
+    [self.menuSureButton.layer setMasksToBounds:YES];
+    [self.menuSureButton.layer setCornerRadius:5.0];
+    [self.menuSureButton.layer setBorderWidth:2.0];
     
-    return view;
+    
 }
 
 - (IBAction)addOrder:(UIButton *)sender {

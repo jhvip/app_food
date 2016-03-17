@@ -15,13 +15,14 @@
 
 @end
 
-@interface MenuView : UIView
+@interface MenuView : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *menuImageView;
 @property (weak, nonatomic) IBOutlet UILabel *menuTitleLable;
+
 @property (weak, nonatomic) IBOutlet UILabel *menuMoneyLable;
 @property (weak, nonatomic) IBOutlet UIButton *menuSureButton;
 
 
 @property (nonatomic,weak) id<MenuViewDelegate> delegate;
-+(MenuView*)menuViewSetInfo:(MenuInfo*)menuInfo;
+-(void)menuViewSetInfo:(MenuInfo*)menuInfo;
 @end

@@ -256,51 +256,68 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcS-h3-KX7">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qnq-Ll-4jE">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YUQ-wF-TAB">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PlM-LX-MTn">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="NcS-h3-KX7" secondAttribute="bottom" constant="10" id="AtR-yL-XHX"/>
                                     <constraint firstAttribute="trailing" secondItem="TNZ-ph-vVf" secondAttribute="trailing" id="D8f-rS-Hxo"/>
-                                    <constraint firstItem="NcS-h3-KX7" firstAttribute="leading" secondItem="wSB-bq-ecG" secondAttribute="leading" constant="10" id="Hod-uU-Cj4"/>
                                     <constraint firstItem="TNZ-ph-vVf" firstAttribute="leading" secondItem="wSB-bq-ecG" secondAttribute="leading" id="L2P-6t-imy"/>
-                                    <constraint firstAttribute="trailing" secondItem="NcS-h3-KX7" secondAttribute="trailing" constant="10" id="N7u-Ij-cTU"/>
-                                    <constraint firstItem="NcS-h3-KX7" firstAttribute="top" secondItem="TNZ-ph-vVf" secondAttribute="bottom" constant="10" id="TI1-Tr-Iur"/>
+                                    <constraint firstItem="Qnq-Ll-4jE" firstAttribute="top" secondItem="TNZ-ph-vVf" secondAttribute="bottom" constant="10" id="MUr-nJ-YJ6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qnq-Ll-4jE" secondAttribute="trailing" constant="10" id="T2c-i9-x9k"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qnq-Ll-4jE" secondAttribute="bottom" constant="10" id="Xz4-mR-Wxt"/>
                                     <constraint firstItem="TNZ-ph-vVf" firstAttribute="top" secondItem="wSB-bq-ecG" secondAttribute="top" constant="61" id="bm6-Sh-YUa">
                                         <variation key="heightClass=regular" constant="0.0"/>
                                     </constraint>
+                                    <constraint firstItem="Qnq-Ll-4jE" firstAttribute="leading" secondItem="wSB-bq-ecG" secondAttribute="leading" constant="10" id="tLC-UY-gCe"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="TNZ-ph-vVf"/>
-                                        <exclude reference="NcS-h3-KX7"/>
+                                        <exclude reference="Qnq-Ll-4jE"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="AtR-yL-XHX"/>
-                                        <exclude reference="Hod-uU-Cj4"/>
-                                        <exclude reference="N7u-Ij-cTU"/>
-                                        <exclude reference="TI1-Tr-Iur"/>
                                         <exclude reference="D8f-rS-Hxo"/>
                                         <exclude reference="L2P-6t-imy"/>
                                         <exclude reference="bm6-Sh-YUa"/>
+                                        <exclude reference="MUr-nJ-YJ6"/>
+                                        <exclude reference="T2c-i9-x9k"/>
+                                        <exclude reference="Xz4-mR-Wxt"/>
+                                        <exclude reference="tLC-UY-gCe"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="subviews">
                                         <include reference="TNZ-ph-vVf"/>
-                                        <include reference="NcS-h3-KX7"/>
+                                        <include reference="Qnq-Ll-4jE"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="AtR-yL-XHX"/>
-                                        <include reference="Hod-uU-Cj4"/>
-                                        <include reference="N7u-Ij-cTU"/>
-                                        <include reference="TI1-Tr-Iur"/>
                                         <include reference="D8f-rS-Hxo"/>
                                         <include reference="L2P-6t-imy"/>
                                         <include reference="bm6-Sh-YUa"/>
+                                        <include reference="MUr-nJ-YJ6"/>
+                                        <include reference="T2c-i9-x9k"/>
+                                        <include reference="Xz4-mR-Wxt"/>
+                                        <include reference="tLC-UY-gCe"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -412,7 +429,7 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="menuView" destination="NcS-h3-KX7" id="6Ru-ox-Zeb"/>
+                        <outlet property="collectionView" destination="Qnq-Ll-4jE" id="qEi-bs-cOp"/>
                         <outlet property="tabBarView" destination="TNZ-ph-vVf" id="dKe-hJ-lzd"/>
                     </connections>
                 </viewController>

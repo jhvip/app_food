@@ -13,14 +13,16 @@
 #import "MenuInfo.h"
 #import "RequestUrl.h"
 
-@interface MainViewController ()<MenuViewDelegate>
+@interface MainViewController ()<MenuViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UIView *menuView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic,assign)NSInteger currentIndex;
 
 @property (weak, nonatomic) IBOutlet UIView *tabBarView;
 //菜单order
 @property (nonatomic,strong) NSMutableArray *orderArray;
+@property (nonatomic,strong) NSArray *menuList;
 
 @end
 
@@ -64,8 +66,20 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self loadMenuView:0];
     
+    self.collectionView.delegate=self;
+    self.collectionView.dataSource=self;
+    
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc]init];
+    //指定布局方式为垂直
+    flow.scrollDirection = UICollectionViewScrollDirectionVertical;
+    flow.minimumLineSpacing = 15;//最小行间距(当垂直布局时是行间距，当水平布局时可以理解为列间距)
+    flow.minimumInteritemSpacing = 20;//两个单元格之间的最小间距
     
 
+    
+    
+    
+    [self.collectionView setCollectionViewLayout:flow];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,8 +99,10 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success,%@",responseObject);
         
-        [self showView:responseObject];
+        //[self showView:responseObject];
+        self.menuList=[MenuInfo menuSetInfo:responseObject];
         
+        [self.collectionView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error %@",error);
     }];
@@ -94,34 +110,56 @@
     
 }
 
--(void)showView:(NSArray*)info{
-    NSArray *menuList=[MenuInfo menuSetInfo:info];
-    CGFloat width=self.menuView.frame.size.width;
-    
-    CGFloat viewWidth=(width-85)*0.33;
-    CGFloat viewHeight=viewWidth*1.2;
-    NSLog(@"%f,%f",viewHeight,viewWidth);
-    
-    //清空之前的view
-    for (UIView *view in self.menuView.subviews) {
-        [view removeFromSuperview];
-    }
-    
-    for (int i=0; i<menuList.count; i++) {
-        int row=i%3;
-        int col=i/3;
-        MenuView *menuView=[MenuView menuViewSetInfo:menuList[i]];
-        menuView.delegate=self;
-        menuView.frame=CGRectMake(row*viewWidth+15*row+30, col*viewHeight+15*col+20, viewWidth,viewHeight);
-        menuView.backgroundColor=[UIColor grayColor];
-        [self.menuView addSubview:menuView];
-    }
-    
-}
+//-(void)showView:(NSArray*)info{
+//    NSArray *menuList=[MenuInfo menuSetInfo:info];
+//    
+//    
+//}
 
+
+
+
+#pragma mark-点菜代理按钮
 -(void)MenuViewReloadTableView{
     NSLog(@"刷新");
 }
+#pragma mark-collectionView 代理方法
 
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"MenuView" bundle:nil] forCellWithReuseIdentifier:@"MenuView"];
+    
+    
+    MenuView *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"MenuView" forIndexPath:indexPath];
+    cell.delegate=self;
+    cell.backgroundColor=[UIColor grayColor];
+    [cell menuViewSetInfo:self.menuList[indexPath.row]];
+
+    return cell;
+
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat width=self.collectionView.frame.size.width / 4 - 20;
+    CGFloat height=width*1.22;
+    return CGSizeMake(width, height);
+}
+
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+//协议中的方法，用于返回分区中的单元格个数
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    if (self.menuList) {
+        return self.menuList.count;
+    }
+    else{
+        return 0;
+    }
+}
 
 @end
