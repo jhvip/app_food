@@ -13,6 +13,7 @@
 #import "MenuInfo.h"
 #import "RequestUrl.h"
 #import "OrderCell.h"
+#import "HMSegmentedControl.h"
 
 @interface MainViewController ()<MenuViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
@@ -25,7 +26,7 @@
 //菜单order
 @property (nonatomic,strong) NSMutableArray *orderArray;
 @property (nonatomic,strong) NSArray *menuList;
-@property (nonatomic,strong) NSArray *orderList;
+@property (nonatomic,strong) NSMutableArray *orderList;
 
 @end
 
@@ -39,30 +40,14 @@
     return _orderArray;
 }
 
-//自定义TabBar
-- (IBAction)tabBarButton:(UIButton*)sender {
-    NSInteger index=(int)sender.tag-10;
-    if (self.currentIndex==index) {
-        return;
-    }else{
-        for (UIButton *button in [self.tabBarView subviews]) {
-            if (button.tag-10==self.currentIndex) {
-                button.selected=NO;
-                button.backgroundColor=[UIColor blackColor];
-                button.tintColor=[UIColor blackColor];
-            }
-        }
-    
-        _currentIndex=index;
-        sender.backgroundColor=[UIColor colorWithRed:0.8392 green:0.8392 blue:0.8392 alpha:1.0f];
-        sender.selected=YES;
-        sender.tintColor=[UIColor colorWithRed:0.8392 green:0.8392 blue:0.8392 alpha:1.0f];
-        
-        
-        [self loadMenuView:(int)sender.tag-10];
+-(NSMutableArray *)orderList{
+    if (_orderList==nil) {
+        _orderList=[NSMutableArray array];
     }
-    
+    return _orderList;
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -74,7 +59,30 @@
     //加载tableVIew
     [self tableViewSet];
     
-   
+    UIImageView *bgimage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bj"]];
+    [self.view addSubview:bgimage];
+    
+    //设置tabBarView
+    HMSegmentedControl *segmentedControl1 = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"热菜",@"冷菜",@"炒菜",@"饮料"]];
+    
+    segmentedControl1.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
+    segmentedControl1.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    segmentedControl1.scrollEnabled = YES;
+    [segmentedControl1 setBackgroundColor:[UIColor blackColor]];
+    segmentedControl1.textColor=[UIColor whiteColor];
+    segmentedControl1.font=[UIFont systemFontOfSize:30];
+    
+    [segmentedControl1 setSelectionIndicatorColor:[UIColor colorWithRed:0.8392 green:0.8392 blue:0.8392 alpha:1.0f]];
+    
+    
+    [segmentedControl1 setSelectionStyle:HMSegmentedControlSelectionStyleBox];
+    
+    segmentedControl1.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
+    [segmentedControl1 setFrame:CGRectMake(0, 0, self.tabBarView.frame.size.width, 80)];
+    [segmentedControl1 addTarget:self action:@selector(loadMenuView:) forControlEvents:UIControlEventValueChanged];
+    [self.tabBarView addSubview:segmentedControl1];
+    self.tabBarView.backgroundColor=[UIColor colorWithRed:0.8392 green:0.8392 blue:0.8392 alpha:0.6f];
+    
     
 }
 
@@ -82,12 +90,12 @@
 -(void)collectionSet{
     self.collectionView.delegate=self;
     self.collectionView.dataSource=self;
-    
+    self.collectionView.backgroundColor=[UIColor colorWithRed:0.8392 green:0.8392 blue:0.8392 alpha:0.6f];
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc]init];
     //指定布局方式为垂直
     flow.scrollDirection = UICollectionViewScrollDirectionVertical;
     flow.minimumLineSpacing = 15;//最小行间距(当垂直布局时是行间距，当水平布局时可以理解为列间距)
-    flow.minimumInteritemSpacing = 20;//两个单元格之间的最小间距
+    flow.minimumInteritemSpacing = 10;//两个单元格之间的最小间距
     [self.collectionView setCollectionViewLayout:flow];
     
 }
@@ -97,6 +105,7 @@
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     [self.tableView registerNib:[UINib nibWithNibName:@"OrderCell" bundle:nil] forCellReuseIdentifier:@"orderList"];
+   
 
 }
 - (void)didReceiveMemoryWarning {
@@ -104,12 +113,12 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)loadMenuView:(int)class{
+-(void)loadMenuView:(HMSegmentedControl*)HMSegmentedControl{
     User *user=[User takeUser];
     NSDictionary *param=@{@"userName":user.userName,
                           @"token":user.token,
                           @"status":@"find",
-                          @"class":[NSString stringWithFormat:@"%d",class]
+                          @"class":[NSString stringWithFormat:@"%ld",HMSegmentedControl.selectedSegmentIndex]
                           };
     AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
     [manage GET:MenuURL parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -127,18 +136,12 @@
     
 }
 
-//-(void)showView:(NSArray*)info{
-//    NSArray *menuList=[MenuInfo menuSetInfo:info];
-//    
-//    
-//}
-
 
 
 
 #pragma mark-点菜代理按钮
 -(void)MenuViewReloadTableView:(NSArray *)orderList{
-    self.orderList=orderList;
+    self.orderList=[NSMutableArray arrayWithArray:orderList];
     [self.tableView reloadData];
 }
 #pragma mark-collectionView 代理方法
@@ -159,7 +162,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat width=self.collectionView.frame.size.width / 4 - 20;
+    CGFloat width=self.collectionView.frame.size.width / 4 - 10;
     CGFloat height=width*1.22;
     return CGSizeMake(width, height);
 }
@@ -204,8 +207,37 @@
 }
 
 
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
 
 
+/*删除用到的函数*/
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        /*此处处理自己的代码，如删除数据*/
+        [self.orderList removeObjectAtIndex:indexPath.row];
+        
+        /*删除tableView中的一行*/
+        [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+       
+        
+    }
+}
+
+
+- (IBAction)makeOrder:(id)sender {
+    
+    [self.tableView setEditing:YES];
+    
+}
 
 
 @end

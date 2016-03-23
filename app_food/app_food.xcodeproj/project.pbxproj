@@ -28,6 +28,7 @@
 		907B41FC1C5C643A0088C895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907B41FA1C5C643A0088C895 /* LaunchScreen.storyboard */; };
 		90B6D2A31C7D4F3500A83B51 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B6D2A21C7D4F3500A83B51 /* Login.storyboard */; };
 		90B6D2A61C7D4F5800A83B51 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B6D2A51C7D4F5800A83B51 /* LoginViewController.m */; };
+		90D23C241CA23F4B00DE8A47 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C231CA23F4B00DE8A47 /* HMSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		90B6D2A21C7D4F3500A83B51 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		90B6D2A41C7D4F5800A83B51 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		90B6D2A51C7D4F5800A83B51 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		90D23C221CA23F4B00DE8A47 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		90D23C231CA23F4B00DE8A47 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,9 @@
 		905187C91C8D698400AB5CD2 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				90D23C1E1CA2243F00DE8A47 /* HMSegmentedControl */,
+				90D23C221CA23F4B00DE8A47 /* HMSegmentedControl.h */,
+				90D23C231CA23F4B00DE8A47 /* HMSegmentedControl.m */,
 				905187DE1C8D701000AB5CD2 /* MBProgressHUD */,
 				905187CA1C8D69A200AB5CD2 /* AFNetworking */,
 			);
@@ -258,6 +264,13 @@
 			name = other;
 			sourceTree = "<group>";
 		};
+		90D23C1E1CA2243F00DE8A47 /* HMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HMSegmentedControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				905187DA1C8D69A200AB5CD2 /* AFSecurityPolicy.m in Sources */,
+				90D23C241CA23F4B00DE8A47 /* HMSegmentedControl.m in Sources */,
 				905187DC1C8D69A200AB5CD2 /* AFURLResponseSerialization.m in Sources */,
 				90B6D2A61C7D4F5800A83B51 /* LoginViewController.m in Sources */,
 				907B41F41C5C643A0088C895 /* MainViewController.m in Sources */,
