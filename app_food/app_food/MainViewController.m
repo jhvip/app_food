@@ -148,7 +148,6 @@
 }
 #pragma mark 显示菜单详情代理方法
 -(void)MenuViewShowDetail:(NSString *)dish_no{
-    NSLog(@"=========%@",dish_no);
     
     DishDetailViewController *view=[[DishDetailViewController alloc]init];
    
@@ -169,7 +168,7 @@
     STPopupController *detailView=[[STPopupController alloc]initWithRootViewController:view];
     detailView.containerView.layer.cornerRadius = 6;
     detailView.transitionStyle = STPopupTransitionStyleFade;
-
+    [detailView setNavigationBarHidden:YES animated:YES];
     [detailView presentInViewController:self];
 }
 

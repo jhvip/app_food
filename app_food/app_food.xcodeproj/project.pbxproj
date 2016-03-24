@@ -36,6 +36,8 @@
 		90D23C521CA38BA000DE8A47 /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C4A1CA38BA000DE8A47 /* STPopupNavigationBar.m */; };
 		90D23C531CA38BA000DE8A47 /* UIResponder+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C4C1CA38BA000DE8A47 /* UIResponder+STPopup.m */; };
 		90D23C541CA38BA000DE8A47 /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C4E1CA38BA000DE8A47 /* UIViewController+STPopup.m */; };
+		90D23C5D1CA3C90400DE8A47 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C5B1CA3C90400DE8A47 /* CommentViewController.m */; };
+		90D23C5E1CA3C90400DE8A47 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90D23C5C1CA3C90400DE8A47 /* CommentViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,9 @@
 		90D23C4C1CA38BA000DE8A47 /* UIResponder+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+STPopup.m"; sourceTree = "<group>"; };
 		90D23C4D1CA38BA000DE8A47 /* UIViewController+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+STPopup.h"; sourceTree = "<group>"; };
 		90D23C4E1CA38BA000DE8A47 /* UIViewController+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+STPopup.m"; sourceTree = "<group>"; };
+		90D23C5A1CA3C90400DE8A47 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		90D23C5B1CA3C90400DE8A47 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		90D23C5C1CA3C90400DE8A47 /* CommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +237,7 @@
 				90B6D29F1C7D4E9200A83B51 /* main(主页) */,
 				90B6D29E1C7D4E8800A83B51 /* login(登陆) */,
 				90D23C251CA26FDF00DE8A47 /* detail(详情) */,
+				90D23C561CA3C81500DE8A47 /* comment(评论) */,
 				907B41EC1C5C64390088C895 /* Supporting Files */,
 				907B41F81C5C643A0088C895 /* Assets.xcassets */,
 			);
@@ -346,6 +352,40 @@
 			path = STPopup;
 			sourceTree = "<group>";
 		};
+		90D23C561CA3C81500DE8A47 /* comment(评论) */ = {
+			isa = PBXGroup;
+			children = (
+				90D23C591CA3C8E300DE8A47 /* controller */,
+				90D23C581CA3C8D900DE8A47 /* view */,
+				90D23C571CA3C8D200DE8A47 /* model */,
+			);
+			name = "comment(评论)";
+			sourceTree = "<group>";
+		};
+		90D23C571CA3C8D200DE8A47 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		90D23C581CA3C8D900DE8A47 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				90D23C5A1CA3C90400DE8A47 /* CommentViewController.h */,
+				90D23C5B1CA3C90400DE8A47 /* CommentViewController.m */,
+				90D23C5C1CA3C90400DE8A47 /* CommentViewController.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		90D23C591CA3C8E300DE8A47 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,6 +448,7 @@
 				90D23C2D1CA270B400DE8A47 /* DishDetailViewController.xib in Resources */,
 				90B6D2A31C7D4F3500A83B51 /* Login.storyboard in Resources */,
 				904812261C9A78FC001420E4 /* OrderCell.xib in Resources */,
+				90D23C5E1CA3C90400DE8A47 /* CommentViewController.xib in Resources */,
 				905187EF1C8FF04200AB5CD2 /* MenuView.xib in Resources */,
 				907B41F91C5C643A0088C895 /* Assets.xcassets in Resources */,
 				907B41F71C5C643A0088C895 /* Main.storyboard in Resources */,
@@ -424,6 +465,7 @@
 				905187DA1C8D69A200AB5CD2 /* AFSecurityPolicy.m in Sources */,
 				90D23C2C1CA270B400DE8A47 /* DishDetailViewController.m in Sources */,
 				90D23C531CA38BA000DE8A47 /* UIResponder+STPopup.m in Sources */,
+				90D23C5D1CA3C90400DE8A47 /* CommentViewController.m in Sources */,
 				90D23C241CA23F4B00DE8A47 /* HMSegmentedControl.m in Sources */,
 				905187DC1C8D69A200AB5CD2 /* AFURLResponseSerialization.m in Sources */,
 				90B6D2A61C7D4F5800A83B51 /* LoginViewController.m in Sources */,

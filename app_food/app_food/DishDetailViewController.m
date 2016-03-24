@@ -9,13 +9,16 @@
 #import "DishDetailViewController.h"
 #import "STPopup.h"
 #import "RequestUrl.h"
+#import "CommentViewController.h"
+
 @interface DishDetailViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+
 @property (weak, nonatomic) IBOutlet UIImageView *dishImageView;
 @property (weak, nonatomic) IBOutlet UILabel *dishTitleLable;
 @property (weak, nonatomic) IBOutlet UILabel *dishDetailLable;
 @property (weak, nonatomic) IBOutlet UILabel *dishTagLable;
 
+@property(nonatomic,strong)NSString *dish_no;
 @end
 
 @implementation DishDetailViewController
@@ -23,10 +26,22 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        self.contentSizeInPopup = CGSizeMake(600,900);
-        self.landscapeContentSizeInPopup = CGSizeMake(550, 750);
+        self.contentSizeInPopup = CGSizeMake(0,0);
+        self.landscapeContentSizeInPopup = CGSizeMake(550, 650);
     }
     return self;
+}
+- (IBAction)dismiss:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"guanbi");
+    }];
+    
+}
+- (IBAction)showComment {
+    CommentViewController *commentView =[[CommentViewController alloc]init];
+    commentView.dish_no=self.dish_no;
+    [self.popupController pushViewController:commentView animated:YES];
 }
 
 - (void)viewDidLoad {
@@ -44,6 +59,7 @@
     self.title = self.dishTitleLable.text;
     self.dishTagLable.text=[dic objectForKey:@"dish_tag"];;
     self.dishDetailLable.text=[dic objectForKey:@"dish_detail"];
+    self.dish_no=[dic objectForKey:@"dish_no"];
     
     NSString *url=[NSString stringWithFormat:@"http://%@/image/%@",ip,[dic objectForKey:@"dish_pic"]];
     NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:url]];

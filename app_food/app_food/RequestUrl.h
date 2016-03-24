@@ -21,6 +21,8 @@
 //菜单详情URL
 #define DetailURL [NSString stringWithFormat:@"http://%@/DishDetailServlet",ip]
 
+//评论URL
+#define CommentURL [NSString stringWithFormat:@"http://%@/DishCommentServlet",ip]
 
 
 

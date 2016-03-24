@@ -415,6 +415,7 @@ static NSMutableSet *_retainedPopupControllers;
             _defaultTitleLabel.attributedText = [[NSAttributedString alloc] initWithString:title
                                                                                 attributes:_navigationBar.titleTextAttributes];
             [_defaultTitleLabel sizeToFit];
+            _defaultTitleLabel.font=[UIFont systemFontOfSize:25];
             _navigationBar.topItem.titleView = _defaultTitleLabel;
         }
     }
