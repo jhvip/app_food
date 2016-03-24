@@ -10,8 +10,10 @@
 @class MenuInfo;
 
 @protocol MenuViewDelegate <NSObject>
-
+//点菜代理事件
 -(void)MenuViewReloadTableView:(NSArray*)orderList;
+//菜单详情代理事件
+-(void)MenuViewShowDetail:(NSString*)dish_no;
 
 @end
 

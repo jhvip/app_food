@@ -18,6 +18,9 @@
 //菜单URL
 #define MenuURL [NSString stringWithFormat:@"http://%@/DishControlServlet",ip]
 
+//菜单详情URL
+#define DetailURL [NSString stringWithFormat:@"http://%@/DishDetailServlet",ip]
+
 
 
 

@@ -18,7 +18,7 @@
     NSString *url=[NSString stringWithFormat:@"http://%@/image/%@",ip,menuInfo.image];
     NSData *imageData=[NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
     self.menuImageView.image=[UIImage imageWithData:imageData];
-    self.menuSureButton.tag=(int)menuInfo.menuNo;
+    self.menuSureButton.tag=[menuInfo.menuNo intValue];
     self.menuMoneyLable.text=menuInfo.menuMoney;
     self.menuTitleLable.text=menuInfo.menuTitle;
     
@@ -45,7 +45,9 @@
 
 - (IBAction)showDetail:(UIButton *)sender {
     
-    
+    if ([self.delegate respondsToSelector:@selector(MenuViewShowDetail:)]) {
+        [self.delegate MenuViewShowDetail:[NSString stringWithFormat:@"%ld",self.menuSureButton.tag]];
+    }
     
 }
 

@@ -14,6 +14,8 @@
 #import "RequestUrl.h"
 #import "OrderCell.h"
 #import "HMSegmentedControl.h"
+#import "STPopup.h"
+#import "DishDetailViewController.h"
 
 @interface MainViewController ()<MenuViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
@@ -63,7 +65,7 @@
     [self.view addSubview:bgimage];
     
     //设置tabBarView
-    HMSegmentedControl *segmentedControl1 = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"热菜",@"冷菜",@"炒菜",@"饮料"]];
+    HMSegmentedControl *segmentedControl1 = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"冷菜",@"热菜",@"炒菜",@"饮料"]];
     
     segmentedControl1.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
     segmentedControl1.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
@@ -144,6 +146,33 @@
     self.orderList=[NSMutableArray arrayWithArray:orderList];
     [self.tableView reloadData];
 }
+#pragma mark 显示菜单详情代理方法
+-(void)MenuViewShowDetail:(NSString *)dish_no{
+    NSLog(@"=========%@",dish_no);
+    
+    DishDetailViewController *view=[[DishDetailViewController alloc]init];
+   
+    NSDictionary *param=@{@"dish_no":dish_no,
+                          };
+    AFHTTPSessionManager *manage=[AFHTTPSessionManager manager];
+    [manage GET:DetailURL parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"success,%@",responseObject);
+        
+        [view DishDetailSetInfo:responseObject];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error %@",error);
+    }];
+
+    
+    STPopupController *detailView=[[STPopupController alloc]initWithRootViewController:view];
+    detailView.containerView.layer.cornerRadius = 6;
+    detailView.transitionStyle = STPopupTransitionStyleFade;
+
+    [detailView presentInViewController:self];
+}
+
 #pragma mark-collectionView 代理方法
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -172,7 +201,7 @@
     return 1;
 }
 
-//协议中的方法，用于返回分区中的单元格个数
+#pragma mark 协议中的方法，用于返回分区中的单元格个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     if (self.menuList) {
