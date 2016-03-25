@@ -26,6 +26,11 @@
 		907B41F71C5C643A0088C895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907B41F51C5C643A0088C895 /* Main.storyboard */; };
 		907B41F91C5C643A0088C895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907B41F81C5C643A0088C895 /* Assets.xcassets */; };
 		907B41FC1C5C643A0088C895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907B41FA1C5C643A0088C895 /* LaunchScreen.storyboard */; };
+		90A8C43D1CA4C43E00F17677 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C43B1CA4C43E00F17677 /* CommentTableViewCell.m */; };
+		90A8C43E1CA4C43E00F17677 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C43C1CA4C43E00F17677 /* CommentTableViewCell.xib */; };
+		90A8C4411CA4CC8F00F17677 /* CommentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4401CA4CC8F00F17677 /* CommentInfo.m */; };
+		90A8C44C1CA50CDD00F17677 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C44A1CA50CDD00F17677 /* CommentController.m */; };
+		90A8C44D1CA50CDD00F17677 /* CommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C44B1CA50CDD00F17677 /* CommentController.xib */; };
 		90B6D2A31C7D4F3500A83B51 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B6D2A21C7D4F3500A83B51 /* Login.storyboard */; };
 		90B6D2A61C7D4F5800A83B51 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B6D2A51C7D4F5800A83B51 /* LoginViewController.m */; };
 		90D23C241CA23F4B00DE8A47 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C231CA23F4B00DE8A47 /* HMSegmentedControl.m */; };
@@ -36,8 +41,6 @@
 		90D23C521CA38BA000DE8A47 /* STPopupNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C4A1CA38BA000DE8A47 /* STPopupNavigationBar.m */; };
 		90D23C531CA38BA000DE8A47 /* UIResponder+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C4C1CA38BA000DE8A47 /* UIResponder+STPopup.m */; };
 		90D23C541CA38BA000DE8A47 /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C4E1CA38BA000DE8A47 /* UIViewController+STPopup.m */; };
-		90D23C5D1CA3C90400DE8A47 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C5B1CA3C90400DE8A47 /* CommentViewController.m */; };
-		90D23C5E1CA3C90400DE8A47 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90D23C5C1CA3C90400DE8A47 /* CommentViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,14 @@
 		907B41F81C5C643A0088C895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		907B41FB1C5C643A0088C895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		907B41FD1C5C643A0088C895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90A8C43A1CA4C43E00F17677 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		90A8C43B1CA4C43E00F17677 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		90A8C43C1CA4C43E00F17677 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		90A8C43F1CA4CC8F00F17677 /* CommentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentInfo.h; sourceTree = "<group>"; };
+		90A8C4401CA4CC8F00F17677 /* CommentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentInfo.m; sourceTree = "<group>"; };
+		90A8C4491CA50CDD00F17677 /* CommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentController.h; sourceTree = "<group>"; };
+		90A8C44A1CA50CDD00F17677 /* CommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentController.m; sourceTree = "<group>"; };
+		90A8C44B1CA50CDD00F17677 /* CommentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentController.xib; sourceTree = "<group>"; };
 		90B6D2A21C7D4F3500A83B51 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		90B6D2A41C7D4F5800A83B51 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		90B6D2A51C7D4F5800A83B51 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -97,9 +108,6 @@
 		90D23C4C1CA38BA000DE8A47 /* UIResponder+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+STPopup.m"; sourceTree = "<group>"; };
 		90D23C4D1CA38BA000DE8A47 /* UIViewController+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+STPopup.h"; sourceTree = "<group>"; };
 		90D23C4E1CA38BA000DE8A47 /* UIViewController+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+STPopup.m"; sourceTree = "<group>"; };
-		90D23C5A1CA3C90400DE8A47 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
-		90D23C5B1CA3C90400DE8A47 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
-		90D23C5C1CA3C90400DE8A47 /* CommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +373,8 @@
 		90D23C571CA3C8D200DE8A47 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				90A8C43F1CA4CC8F00F17677 /* CommentInfo.h */,
+				90A8C4401CA4CC8F00F17677 /* CommentInfo.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -372,9 +382,9 @@
 		90D23C581CA3C8D900DE8A47 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				90D23C5A1CA3C90400DE8A47 /* CommentViewController.h */,
-				90D23C5B1CA3C90400DE8A47 /* CommentViewController.m */,
-				90D23C5C1CA3C90400DE8A47 /* CommentViewController.xib */,
+				90A8C43A1CA4C43E00F17677 /* CommentTableViewCell.h */,
+				90A8C43B1CA4C43E00F17677 /* CommentTableViewCell.m */,
+				90A8C43C1CA4C43E00F17677 /* CommentTableViewCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -382,6 +392,9 @@
 		90D23C591CA3C8E300DE8A47 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				90A8C4491CA50CDD00F17677 /* CommentController.h */,
+				90A8C44A1CA50CDD00F17677 /* CommentController.m */,
+				90A8C44B1CA50CDD00F17677 /* CommentController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -448,9 +461,10 @@
 				90D23C2D1CA270B400DE8A47 /* DishDetailViewController.xib in Resources */,
 				90B6D2A31C7D4F3500A83B51 /* Login.storyboard in Resources */,
 				904812261C9A78FC001420E4 /* OrderCell.xib in Resources */,
-				90D23C5E1CA3C90400DE8A47 /* CommentViewController.xib in Resources */,
+				90A8C44D1CA50CDD00F17677 /* CommentController.xib in Resources */,
 				905187EF1C8FF04200AB5CD2 /* MenuView.xib in Resources */,
 				907B41F91C5C643A0088C895 /* Assets.xcassets in Resources */,
+				90A8C43E1CA4C43E00F17677 /* CommentTableViewCell.xib in Resources */,
 				907B41F71C5C643A0088C895 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,13 +479,15 @@
 				905187DA1C8D69A200AB5CD2 /* AFSecurityPolicy.m in Sources */,
 				90D23C2C1CA270B400DE8A47 /* DishDetailViewController.m in Sources */,
 				90D23C531CA38BA000DE8A47 /* UIResponder+STPopup.m in Sources */,
-				90D23C5D1CA3C90400DE8A47 /* CommentViewController.m in Sources */,
 				90D23C241CA23F4B00DE8A47 /* HMSegmentedControl.m in Sources */,
 				905187DC1C8D69A200AB5CD2 /* AFURLResponseSerialization.m in Sources */,
 				90B6D2A61C7D4F5800A83B51 /* LoginViewController.m in Sources */,
+				90A8C4411CA4CC8F00F17677 /* CommentInfo.m in Sources */,
+				90A8C43D1CA4C43E00F17677 /* CommentTableViewCell.m in Sources */,
 				90D23C521CA38BA000DE8A47 /* STPopupNavigationBar.m in Sources */,
 				907B41F41C5C643A0088C895 /* MainViewController.m in Sources */,
 				905187E21C8D701000AB5CD2 /* MBProgressHUD.m in Sources */,
+				90A8C44C1CA50CDD00F17677 /* CommentController.m in Sources */,
 				905187D81C8D69A200AB5CD2 /* AFHTTPSessionManager.m in Sources */,
 				90D23C511CA38BA000DE8A47 /* STPopupLeftBarItem.m in Sources */,
 				905187DD1C8D69A200AB5CD2 /* AFURLSessionManager.m in Sources */,

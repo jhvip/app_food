@@ -24,12 +24,12 @@
                     <rect key="frame" x="0.0" y="0.0" width="412" height="329.5"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="糖醋排骨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYC-H2-uFL">
-                    <rect key="frame" x="23" y="344" width="68" height="21"/>
+                    <rect key="frame" x="23" y="337.5" width="92" height="27.5"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Zdz-ls-H4F"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="c89-TM-TRW"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -83,7 +83,7 @@
                 <constraint firstAttribute="trailing" secondItem="BFk-Jw-O7y" secondAttribute="trailing" id="0Lr-u5-YsU"/>
                 <constraint firstItem="J31-2O-FWU" firstAttribute="leading" secondItem="iYC-H2-uFL" secondAttribute="leading" id="4Mb-BN-DpZ"/>
                 <constraint firstItem="L1N-N3-KbM" firstAttribute="leading" secondItem="6Lc-7X-Ppn" secondAttribute="leading" id="A3j-QZ-1tT"/>
-                <constraint firstItem="iYC-H2-uFL" firstAttribute="top" secondItem="BFk-Jw-O7y" secondAttribute="bottom" constant="15" id="CpN-v7-4IL"/>
+                <constraint firstItem="iYC-H2-uFL" firstAttribute="top" secondItem="BFk-Jw-O7y" secondAttribute="bottom" constant="8" id="CpN-v7-4IL"/>
                 <constraint firstItem="6Lc-7X-Ppn" firstAttribute="top" secondItem="J31-2O-FWU" secondAttribute="bottom" constant="10" id="Ef1-hP-boJ"/>
                 <constraint firstAttribute="trailing" secondItem="8cm-15-Ph2" secondAttribute="trailing" constant="15" id="KRK-vq-wpG"/>
                 <constraint firstAttribute="trailing" secondItem="J31-2O-FWU" secondAttribute="trailing" constant="23" id="LZs-ZO-r4K"/>
@@ -110,6 +110,6 @@
         </view>
     </objects>
     <resources>
-        <image name="x" width="64" height="64"/>
+        <image name="x" width="512" height="512"/>
     </resources>
 </document>

@@ -9,8 +9,7 @@
 #import "DishDetailViewController.h"
 #import "STPopup.h"
 #import "RequestUrl.h"
-#import "CommentViewController.h"
-
+#import "CommentController.h"
 @interface DishDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *dishImageView;
@@ -39,7 +38,7 @@
     
 }
 - (IBAction)showComment {
-    CommentViewController *commentView =[[CommentViewController alloc]init];
+    CommentController *commentView =[[CommentController alloc]init];
     commentView.dish_no=self.dish_no;
     [self.popupController pushViewController:commentView animated:YES];
 }
