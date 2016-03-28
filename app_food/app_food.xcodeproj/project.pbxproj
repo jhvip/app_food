@@ -31,6 +31,8 @@
 		90A8C4411CA4CC8F00F17677 /* CommentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4401CA4CC8F00F17677 /* CommentInfo.m */; };
 		90A8C44C1CA50CDD00F17677 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C44A1CA50CDD00F17677 /* CommentController.m */; };
 		90A8C44D1CA50CDD00F17677 /* CommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C44B1CA50CDD00F17677 /* CommentController.xib */; };
+		90A8C4531CA9065D00F17677 /* OrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A8C4511CA9065D00F17677 /* OrderView.m */; };
+		90A8C4541CA9065D00F17677 /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8C4521CA9065D00F17677 /* OrderView.xib */; };
 		90B6D2A31C7D4F3500A83B51 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B6D2A21C7D4F3500A83B51 /* Login.storyboard */; };
 		90B6D2A61C7D4F5800A83B51 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B6D2A51C7D4F5800A83B51 /* LoginViewController.m */; };
 		90D23C241CA23F4B00DE8A47 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D23C231CA23F4B00DE8A47 /* HMSegmentedControl.m */; };
@@ -89,6 +91,9 @@
 		90A8C4491CA50CDD00F17677 /* CommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentController.h; sourceTree = "<group>"; };
 		90A8C44A1CA50CDD00F17677 /* CommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentController.m; sourceTree = "<group>"; };
 		90A8C44B1CA50CDD00F17677 /* CommentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentController.xib; sourceTree = "<group>"; };
+		90A8C4501CA9065D00F17677 /* OrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderView.h; sourceTree = "<group>"; };
+		90A8C4511CA9065D00F17677 /* OrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderView.m; sourceTree = "<group>"; };
+		90A8C4521CA9065D00F17677 /* OrderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
 		90B6D2A21C7D4F3500A83B51 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		90B6D2A41C7D4F5800A83B51 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		90B6D2A51C7D4F5800A83B51 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -206,6 +211,9 @@
 				904812221C9A78EB001420E4 /* OrderCell.h */,
 				904812231C9A78EB001420E4 /* OrderCell.m */,
 				904812251C9A78FC001420E4 /* OrderCell.xib */,
+				90A8C4501CA9065D00F17677 /* OrderView.h */,
+				90A8C4511CA9065D00F17677 /* OrderView.m */,
+				90A8C4521CA9065D00F17677 /* OrderView.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -460,6 +468,7 @@
 				907B41FC1C5C643A0088C895 /* LaunchScreen.storyboard in Resources */,
 				90D23C2D1CA270B400DE8A47 /* DishDetailViewController.xib in Resources */,
 				90B6D2A31C7D4F3500A83B51 /* Login.storyboard in Resources */,
+				90A8C4541CA9065D00F17677 /* OrderView.xib in Resources */,
 				904812261C9A78FC001420E4 /* OrderCell.xib in Resources */,
 				90A8C44D1CA50CDD00F17677 /* CommentController.xib in Resources */,
 				905187EF1C8FF04200AB5CD2 /* MenuView.xib in Resources */,
@@ -495,6 +504,7 @@
 				901190861C929EB40083345C /* User.m in Sources */,
 				907B41F11C5C643A0088C895 /* AppDelegate.m in Sources */,
 				904812241C9A78EB001420E4 /* OrderCell.m in Sources */,
+				90A8C4531CA9065D00F17677 /* OrderView.m in Sources */,
 				901190831C9297160083345C /* MenuInfo.m in Sources */,
 				905187D91C8D69A200AB5CD2 /* AFNetworkReachabilityManager.m in Sources */,
 				907B41EE1C5C643A0088C895 /* main.m in Sources */,

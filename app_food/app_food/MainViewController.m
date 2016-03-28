@@ -16,6 +16,7 @@
 #import "HMSegmentedControl.h"
 #import "STPopup.h"
 #import "DishDetailViewController.h"
+#import "OrderView.h"
 
 @interface MainViewController ()<MenuViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
@@ -29,6 +30,8 @@
 @property (nonatomic,strong) NSMutableArray *orderArray;
 @property (nonatomic,strong) NSArray *menuList;
 @property (nonatomic,strong) NSMutableArray *orderList;
+
+@property (nonatomic,assign) BOOL editStatus;
 
 @end
 
@@ -259,11 +262,42 @@
         
     }
 }
-
+#pragma mark 编辑菜单
+- (IBAction)editOrder:(UIButton *)sender {
+    
+    if (self.orderList.count!=0) {
+        self.editStatus=!self.editStatus;
+        [self.tableView setEditing:self.editStatus];
+    }
+    
+    //如果现在状态为编辑状态
+    if(!self.editStatus){
+        [[NSUserDefaults standardUserDefaults]setObject:self.orderList forKey:@"dishes"];
+        [self.tableView reloadData];
+    }
+    
+    
+}
 
 - (IBAction)makeOrder:(id)sender {
     
-    [self.tableView setEditing:YES];
+    if (self.orderList) {
+        [[NSUserDefaults standardUserDefaults]setObject:self.orderList forKey:@"orderList"];
+        [self.orderList removeAllObjects];
+        [[NSUserDefaults standardUserDefaults]setObject:self.orderList forKey:@"dishes"];
+        [self.tableView reloadData];
+    }
+    
+}
+- (IBAction)showOrderView {
+    
+    OrderView *view=[[OrderView alloc]init];
+    STPopupController *OrderView=[[STPopupController alloc]initWithRootViewController:view];
+    OrderView.containerView.layer.cornerRadius = 6;
+    OrderView.transitionStyle = STPopupTransitionStyleFade;
+    [OrderView setNavigationBarHidden:YES animated:YES];
+    [OrderView presentInViewController:self];
+
     
 }
 

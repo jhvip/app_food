@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class MenuInfo;
 @interface OrderCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 
 -(void)orderCellSetCell:(NSDictionary*)dict num:(NSInteger)num;
 

@@ -89,6 +89,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bgView" destination="9R6-vO-XHm" id="ans-JW-pac"/>
                 <outlet property="moneyLable" destination="YqS-gk-zse" id="FK5-10-20i"/>
                 <outlet property="numLable" destination="FME-un-yey" id="hbX-YK-JOV"/>
                 <outlet property="titleLable" destination="DG3-e3-Pk9" id="UIk-EP-YHV"/>

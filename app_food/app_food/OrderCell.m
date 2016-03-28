@@ -21,7 +21,7 @@
 
 
 -(void)orderCellSetCell:(NSDictionary *)dict num:(NSInteger)num{
-    self.numLable.text=[NSString stringWithFormat:@"%ld",(long)num];
+    self.numLable.text=[NSString stringWithFormat:@"%ld",(long)num+1];
     self.titleLable.text=[dict objectForKey:@"name"];
     self.moneyLable.text=[dict objectForKey:@"acountnum"];
     
