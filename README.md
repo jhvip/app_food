@@ -1,1 +1,3 @@
-Created with Git Draw (http://github.com/ben174/git-draw)
+# 个人毕业设计
+
+ *仅作为项目管理
